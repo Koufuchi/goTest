@@ -1,25 +1,11 @@
-package main
+package printTest
 
 import (
 	"fmt"
 	"sync"
 )
 
-func main() {
-	// fmt.Println("Hello, World!")
-
-	// printByFor(0, 20)
-
-	// printByRecu(0, 20)
-
-	// printByRecuPoint(0, 20)
-
-	// printByChan(0, 20)
-
-	printByChan2(0, 20)
-}
-
-func printByFor(start, end int) {
+func PrintByFor(start, end int) {
 	if start > end {
 		fmt.Println("start is great than end !")
 	}
@@ -29,15 +15,15 @@ func printByFor(start, end int) {
 	}
 }
 
-func printByRecu(start, end int) {
+func PrintByRecu(start, end int) {
 	if start > end {
 		return
 	}
 	fmt.Println(start)
-	printByRecu(start+1, end)
+	PrintByRecu(start+1, end)
 }
 
-func printByRecuPoint(start, end int) {
+func PrintByRecuPoint(start, end int) {
 	if start > end {
 		fmt.Println("start is great than end !")
 	}
@@ -62,7 +48,7 @@ func printByRecuPoint(start, end int) {
 	subFn(startPoint, endPoint)
 }
 
-func printByChan(start, end int) {
+func PrintByChan(start, end int) {
 	if start > end {
 		fmt.Println("start is great than end !")
 	}
@@ -85,7 +71,7 @@ func printByChanSub(start, end int, chInt chan int) {
 	close(chInt)
 }
 
-func printByChan2(start, end int) {
+func PrintByChan2(start, end int) {
 
 	chInt := make(chan int)
 
